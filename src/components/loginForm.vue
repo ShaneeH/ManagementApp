@@ -15,7 +15,7 @@
   
   <script setup>
   import { ref } from "vue";
-  import {login} from '../services/loginService';
+  import loginService from "../services/loginService";
 
   
   import {
@@ -30,7 +30,7 @@
   // Methods
   const loginUser = () => {
     //Send Form Data to 'loginService.js : login()'
-    login(loginEmail.value, loginPassword.value);
+    loginService.login(loginEmail.value, loginPassword.value);
   };
   </script>
   

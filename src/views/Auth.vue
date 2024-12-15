@@ -30,9 +30,9 @@
 
 <script setup>
 import { ref } from "vue";
-import Test from './Test.vue';
 import loginForm from "../components/loginForm.vue";
 import registerForm from "../components/registerForm.vue";
+
 
 const authType = ref(true); // true for login, false for register
 const toggleAuth = () => {
