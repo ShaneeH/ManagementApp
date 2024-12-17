@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Auth erer@g.com   bigboyHel#4545</ion-title>
+        <ion-title>{{ Header }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -25,11 +25,11 @@
       </div>
 
 
-    <Test />
+      <Test />
     </ion-content>
   </ion-page>
 
-  
+
 </template>
 
 <script setup>
@@ -40,8 +40,15 @@ import Test from "./Test.vue";
 
 
 const authType = ref(true); // true for login, false for register
+const Header = ref('Please Login to Continue'); // true for login, false for register
+
 const toggleAuth = () => {
   authType.value = !authType.value;
+  if (authType.value) {
+    Header.value = 'Please Login to Continue';
+  } else {
+    Header.value = 'Please Register to Continue';
+  }
 };
 
 

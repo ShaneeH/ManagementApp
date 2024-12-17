@@ -5,7 +5,7 @@ import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from '
 
 
 const firebaseConfig = {
-//ADD YOU'RE FIREBASE DETAILS HERE
+
 };
 
 // Initialize Firebase
