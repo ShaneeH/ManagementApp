@@ -24,8 +24,8 @@ A powerful and intuitive **Employee Management App** built with **Ionic Framewor
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: [Ionic Framework](https://ionicframework.com/) (Angular/React/Stencil)
-- **Backend**: Node.js / Express.js (Optional: Firebase for real-time database and authentication)
-- **Authentication**: Firebase Auth / Custom JWT
+- **Frontend**: [Ionic Framework](https://ionicframework.com/) (Vue))
+- **Backend**: Express.js 
+- **Authentication**: Firebase Auth 
 - **Storage**: Firebase Storage / Cloudinary for storing employee selfies
-- **Database**: Firestore / MySQL / MongoDB
+- **Database**: Firestore / MySQL 
