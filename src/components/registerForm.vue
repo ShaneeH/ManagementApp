@@ -7,7 +7,7 @@
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Email</ion-label>
-            <ion-input type="email" v-model="registerEmail" required />
+            <ion-input type="email" v-model="registerEmail" data="hahesyshane@gmail.com" required />
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Password</ion-label>
@@ -26,13 +26,16 @@
           </ion-item>
           <ion-button expand="block" type="submit">Register</ion-button>
         </form>
+
+        {{ successMessage}}
+        {{ errorMessage }}
  
   
   </template>
   
   <script setup>
   import { ref } from "vue";
-  import { register } from '../services/registerService';
+  import registerService from "../services/registerService";
 
   
   import {
@@ -49,17 +52,29 @@
   const confirmPassword = ref("");
   const userRole = ref("employee"); // Default to employee
   
+  const successMessage = ref("");
+  const errorMessage = ref("");
 
-  const registerUser = () => {
-    if (registerPassword.value !== confirmPassword.value) {
+
+
+
+  const registerUser = async () => {
+  const response = await registerService.register(registerName.value, registerEmail.value, registerPassword.value, userRole.value);
+
+  if (registerPassword.value !== confirmPassword.value) {
       console.log("Passwords do not match!");
       alert('Password do not match');
       return;
     }
-  
-    register(registerName.value, registerEmail.value, registerPassword.value, userRole.value);
-  
-  };
+
+  if (response.success) {
+    successMessage.value = `User registered successfully! \n Email sent to ${registerEmail.value} `;
+    errorMessage.value = '';
+  } else {
+    errorMessage.value = response.errorMessage;
+    successMessage.value = '';
+  }
+};
   
   
   </script>

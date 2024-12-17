@@ -1,16 +1,11 @@
+// firebase.config.js
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 
-//Replace with you're Information
+
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-  measurementId: ""
+//ADD YOU'RE FIREBASE DETAILS HERE
 };
 
 // Initialize Firebase
@@ -20,4 +15,5 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export { auth, db };
+// Export the necessary services and functions for use in other parts of your application
+export { auth, db, createUserWithEmailAndPassword, sendEmailVerification };

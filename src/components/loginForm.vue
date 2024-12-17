@@ -30,7 +30,12 @@
   // Methods
   const loginUser = () => {
     //Send Form Data to 'loginService.js : login()'
-    loginService.login(loginEmail.value, loginPassword.value);
+      try {
+        loginService.login(loginEmail.value, loginPassword.value);
+      } catch (error) {
+         console.log(error);
+      }
+
   };
   </script>
   
